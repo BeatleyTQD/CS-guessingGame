@@ -6,7 +6,7 @@ namespace guessingGame
     {
         static void Main(string[] args)
         {
-            int secretNumber = 42;
+            int secretNumber = new Random().Next(1, 100);
             for (int i = 0; i < 4; i++)
             {
                 Console.Write($"Weary traveller, what is the secret number? This is guess {i+1}:  ");
@@ -20,7 +20,7 @@ namespace guessingGame
                 }
                 else
                 {
-                    Console.WriteLine("Do not toy with me, child!");
+                    Console.WriteLine($"Do not toy with me, child! You have {3-i} guesses remaining...");
                 }
             }
         }
