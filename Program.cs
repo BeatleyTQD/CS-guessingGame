@@ -9,13 +9,14 @@ namespace guessingGame
             int secretNumber = 42;
             for (int i = 0; i < 4; i++)
             {
-                Console.Write("Weary traveller, what is the secret number?  ");
+                Console.Write($"Weary traveller, what is the secret number? This is guess {i+1}:  ");
                 string answer = Console.ReadLine();
                 int answerNum = int.Parse(answer);
 
                 if (answerNum == secretNumber)
                 {
                     Console.WriteLine("Praise Muloch, glory be his name!");
+                    break;
                 }
                 else
                 {
