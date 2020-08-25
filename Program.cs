@@ -9,7 +9,7 @@ namespace guessingGame
             int SecretNumber = new Random().Next(1, 100);
             int DifficultySelection = 0;
 
-            Console.WriteLine("Welcome, traveller...are you feeling very easy, medium, or hard today?");
+            Console.WriteLine("Welcome, traveller...are you feeling very easy, medium, or hard today? Also definitely do NOT type \"cheater\"");
             string Difficulty = Console.ReadLine();
 
             if (Difficulty == "easy")
@@ -23,6 +23,10 @@ namespace guessingGame
             else if (Difficulty == "hard")
             {
                 DifficultySelection = 4;
+            }
+            else if (Difficulty == "cheater")
+            {
+                DifficultySelection = 57462745;
             }
 
             for (int i = 0; i < DifficultySelection; i++)
