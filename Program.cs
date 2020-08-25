@@ -6,27 +6,45 @@ namespace guessingGame
     {
         static void Main(string[] args)
         {
-            int secretNumber = new Random().Next(1, 100);
-            for (int i = 0; i < 4; i++)
-            {
-                Console.Write($"Weary traveller, what is the secret number? This is guess {i+1}:  ");
-                string answer = Console.ReadLine();
-                int answerNum = int.Parse(answer);
+            int SecretNumber = new Random().Next(1, 100);
+            int DifficultySelection = 0;
 
-                if (answerNum == secretNumber)
+            Console.WriteLine("Welcome, traveller...are you feeling very easy, medium, or hard today?");
+            string Difficulty = Console.ReadLine();
+
+            if (Difficulty == "easy")
+            {
+                DifficultySelection = 8;
+            }
+            else if (Difficulty == "medium")
+            {
+                DifficultySelection = 6;
+            }
+            else if (Difficulty == "hard")
+            {
+                DifficultySelection = 4;
+            }
+
+            for (int i = 0; i < DifficultySelection; i++)
+            {
+                Console.Write($"Tell me...what is the secret number? This is guess {i+1}:  ");
+                string Answer = Console.ReadLine();
+                int AnswerNum = int.Parse(Answer);
+
+                if (AnswerNum == SecretNumber)
                 {
                     Console.WriteLine("Praise Muloch, glory be his name!");
                     break;
                 }
                 else
                 {
-                    if (answerNum > secretNumber)
+                    if (AnswerNum > SecretNumber)
                     {
-                        Console.WriteLine($"Do not toy with me, child, your number was too high! You have {3-i} guesses remaining...");
+                        Console.WriteLine($"Do not toy with me, child, your number was too high! You have {DifficultySelection-i-1} guesses remaining...");
                     }
                     else
                     {
-                        Console.WriteLine($"Do not toy with me, child, your number is too low! You have {3-i} guesses remaining...");
+                        Console.WriteLine($"Do not toy with me, child, your number is too low! You have {DifficultySelection-i-1} guesses remaining...");
                     }
 
                 }
