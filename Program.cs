@@ -20,7 +20,15 @@ namespace guessingGame
                 }
                 else
                 {
-                    Console.WriteLine($"Do not toy with me, child! You have {3-i} guesses remaining...");
+                    if (answerNum > secretNumber)
+                    {
+                        Console.WriteLine($"Do not toy with me, child, your number was too high! You have {3-i} guesses remaining...");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Do not toy with me, child, your number is too low! You have {3-i} guesses remaining...");
+                    }
+
                 }
             }
         }
