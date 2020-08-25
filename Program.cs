@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace guessingGame
 {
@@ -10,6 +11,25 @@ namespace guessingGame
             int DifficultySelection = 0;
 
             Console.WriteLine("Welcome, traveller...are you feeling very easy, medium, or hard today? Also definitely do NOT type \"cheater\"");
+            Console.Beep(700, 1000);
+            Console.Beep(450, 1000);
+            Console.Beep(550, 150);
+            Console.Beep(620, 150);
+            Console.Beep(700, 850);
+            Console.Beep(450, 850);
+            Console.Beep(550, 150);
+            Console.Beep(620, 150);
+            Console.Beep(520, 2000);
+            Console.Beep(620, 1000);
+            Console.Beep(420, 800);
+            Console.Beep(520, 150);
+            Console.Beep(550, 150);
+            Console.Beep(620, 1000);
+            Console.Beep(420, 800);
+            Console.Beep(550, 150);
+            Console.Beep(520, 150);
+            Console.Beep(450, 800);
+
             string Difficulty = Console.ReadLine();
 
             if (Difficulty == "easy")
